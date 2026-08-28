@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline · CropDoc Pro</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px;
+        }
+        .offline-icon {
+            font-size: 5rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .offline-title {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .offline-desc {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            max-width: 400px;
+        }
+        .offline-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1 class="offline-title">You're Offline</h1>
+        <p class="offline-desc">
+            No internet connection detected. Don't worry — your data is safely stored locally.
+            Once you're back online, all changes will sync automatically.
+        </p>
+        <div class="offline-actions">
+            <button onclick="location.reload()" class="btn-primary">
+                <i class="fas fa-redo"></i> Retry
+            </button>
+            <a href="index.html" class="btn-secondary">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="scanner.html" class="btn-secondary">
+                <i class="fas fa-camera"></i> Scanner
+            </a>
+        </div>
+        <div style="margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
+            <p>💾 All scans are saved locally</p>
+            <p>🔄 Auto-sync when online</p>
+        </div>
+    </div>
+</body>
+</html>
