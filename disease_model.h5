@@ -1,0 +1,11 @@
+# disease_model.h5 - Placeholder for actual model
+# This is a placeholder file. In production, this would be a trained TensorFlow model.
+# The model would be trained on thousands of crop disease images.
+# Due to size constraints, we're providing the structure only.
+
+# Model architecture would be:
+# Conv2D -> MaxPooling -> Conv2D -> MaxPooling -> Conv2D -> MaxPooling
+# -> Flatten -> Dense -> Dropout -> Dense
+
+# Expected input: 224x224x3 RGB images
+# Output: 12 classes (6 diseases + 6 healthy)
