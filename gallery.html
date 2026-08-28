@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Gallery · CropDoc Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div id="app">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <i class="fas fa-seedling"></i>
+                <span>CropDoc <span class="pro-badge">PRO</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="scanner.html"><i class="fas fa-camera"></i> Scanner</a></li>
+                <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-pdf"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i></a></li>
+            </ul>
+        </nav>
+
+        <main class="gallery-main">
+            <header class="gallery-header">
+                <h1><i class="fas fa-images"></i> Image Gallery</h1>
+                <div class="gallery-controls">
+                    <button id="gridView"><i class="fas fa-th"></i></button>
+                    <button id="listView"><i class="fas fa-list"></i></button>
+                    <button id="deleteAll"><i class="fas fa-trash"></i></button>
+                    <button id="exportAll"><i class="fas fa-download"></i></button>
+                </div>
+            </header>
+
+            <div class="gallery-filters">
+                <input type="text" id="searchGallery" placeholder="🔍 Search crops..." />
+                <select id="filterCrop">
+                    <option value="all">All Crops</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="maize">Maize</option>
+                    <option value="rice">Rice</option>
+                    <option value="potato">Potato</option>
+                </select>
+                <select id="filterCondition">
+                    <option value="all">All Conditions</option>
+                    <option value="healthy">Healthy</option>
+                    <option value="disease">Disease</option>
+                    <option value="deficiency">Deficiency</option>
+                </select>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be rendered here -->
+                <div class="gallery-empty">
+                    <i class="fas fa-camera fa-3x"></i>
+                    <h3>No images yet</h3>
+                    <p>Start scanning to build your gallery</p>
+                    <a href="scanner.html" class="btn-primary">Take Photo</a>
+                </div>
+            </div>
+
+            <div class="gallery-stats">
+                <span id="galleryCount">0 images</span>
+                <span id="gallerySize">0 MB</span>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <span>© 2026 CropDoc Pro · Advanced Agricultural AI</span>
+            <span id="liveTime"></span>
+        </footer>
+    </div>
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/data-manager.js"></script>
+</body>
+</html>
