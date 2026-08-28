@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Root Scanner · CropDoc Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/scanner.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div id="app">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <i class="fas fa-seedling"></i>
+                <span>CropDoc <span class="pro-badge">PRO</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="scanner.html"><i class="fas fa-camera"></i> Scanner</a></li>
+                <li><a href="root-scanner.html" class="active"><i class="fas fa-tree"></i> Root</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="reports.html"><i class="fas fa-file-pdf"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i></a></li>
+            </ul>
+        </nav>
+
+        <main class="scanner-main">
+            <header class="page-header">
+                <h1><i class="fas fa-tree"></i> Root Scanner</h1>
+                <p>Analyze root health, depth, and soil conditions</p>
+            </header>
+
+            <!-- Root Scanner -->
+            <div class="root-scanner-container">
+                <div class="root-scanner-panel">
+                    <div class="root-scanner-visual" id="rootVisualization">
+                        <canvas id="rootCanvas" width="400" height="300"></canvas>
+                    </div>
+
+                    <div class="root-controls">
+                        <button id="scanRootBtn" class="btn-primary">
+                            <i class="fas fa-microscope"></i> Scan Root System
+                        </button>
+                        <button id="uploadRootBtn" class="btn-secondary">
+                            <i class="fas fa-upload"></i> Upload Image
+                        </button>
+                        <select id="rootDepthSelect" class="root-select">
+                            <option value="shallow">Shallow (0-10cm)</option>
+                            <option value="medium" selected>Medium (10-30cm)</option>
+                            <option value="deep">Deep (30-60cm)</option>
+                        </select>
+                    </div>
+
+                    <div class="root-results-panel" id="rootResults">
+                        <h3><i class="fas fa-chart-bar"></i> Root Analysis Results</h3>
+                        <div id="rootAnalysisResults">
+                            <p class="placeholder">Tap "Scan Root System" to begin analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soil Analysis -->
+                <div class="soil-analysis-panel">
+                    <h3><i class="fas fa-tint"></i> Soil Conditions</h3>
+                    <div class="soil-metrics">
+                        <div class="soil-metric">
+                            <span class="metric-label">Moisture</span>
+                            <div class="metric-bar"><div class="metric-fill" id="soilMoisture" style="width:65%"></div></div>
+                            <span class="metric-value" id="moistureValue">65%</span>
+                        </div>
+                        <div class="soil-metric">
+                            <span class="metric-label">pH Level</span>
+                            <div class="metric-bar"><div class="metric-fill ph" id="soilPH" style="width:60%"></div></div>
+                            <span class="metric-value" id="phValue">6.5</span>
+                        </div>
+                        <div class="soil-metric">
+                            <span class="metric-label">Compaction</span>
+                            <div class="metric-bar"><div class="metric-fill compaction" id="soilCompaction" style="width:40%"></div></div>
+                            <span class="metric-value" id="compactionValue">Low</span>
+                        </div>
+                        <div class="soil-metric">
+                            <span class="metric-label">Organic Matter</span>
+                            <div class="metric-bar"><div class="metric-fill organic" id="soilOrganic" style="width:55%"></div></div>
+                            <span class="metric-value" id="organicValue">Medium</span>
+                        </div>
+                    </div>
+                    <div class="soil-recommendations" id="soilRecommendations">
+                        <h4>💡 Recommendations</h4>
+                        <ul>
+                            <li>Maintain current moisture levels</li>
+                            <li>Add organic compost for better structure</li>
+                            <li>Consider aerating soil to reduce compaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <span>© 2026 CropDoc Pro · Advanced Agricultural AI</span>
+            <span id="liveTime"></span>
+        </footer>
+    </div>
+
+    <script src="../js/root-analyzer.js"></script>
+    <script src="../js/root-scanner.js"></script>
+</body>
+</html>
